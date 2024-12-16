@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carte des Communes du Morbihan</title>
+    <style>
+        svg {
+            width: 100%;
+            height: auto;
+        }
+        .commune {
+            fill: #cce5ff;
+            stroke: #333;
+            stroke-width: 0.5;
+            cursor: pointer;
+            transition: fill 0.3s;
+        }
+        .commune:hover {
+            fill: #007bff;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Carte Interactive des Communes du Morbihan</h1>
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+    <!-- Exemple de commune - Remplacez par les chemins SVG réels -->
+    <path class="commune" id="commune-56001" d="M100,100 L150,100 L150,150 L100,150 Z" />
+    <path class="commune" id="commune-56002" d="M200,100 L250,100 L250,150 L200,150 Z" />
+</svg>
+
+<script>
+    document.querySelectorAll('.commune').forEach(commune => {
+        commune.addEventListener('click', () => {
+            const codeINSEE = commune.id.split('-')[1];
+            alert(`Code INSEE sélectionné: ${codeINSEE}`);
+        });
+    });
+</script>
+
+</body>
+</html>
