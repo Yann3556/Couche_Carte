@@ -25,16 +25,18 @@
 
 <h1>Carte Interactive des Communes du Morbihan</h1>
 <svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
-    <!-- Exemple de commune - Remplacez par les chemins SVG réels -->
+    <!-- Exemple corrigé avec des id propres aux communes -->
     <path class="commune" id="commune-56001" d="M100,100 L150,100 L150,150 L100,150 Z" />
     <path class="commune" id="commune-56002" d="M200,100 L250,100 L250,150 L200,150 Z" />
+    <path class="commune" id="commune-56003" d="M300,100 L350,100 L350,150 L300,150 Z" />
 </svg>
 
 <script>
+    // Assure une interaction propre et robuste
     document.querySelectorAll('.commune').forEach(commune => {
         commune.addEventListener('click', () => {
-            const codeINSEE = commune.id.split('-')[1];
-            alert(`Code INSEE sélectionné: ${codeINSEE}`);
+            const codeINSEE = commune.id.replace('commune-', '');
+            alert(`Code INSEE sélectionné : ${codeINSEE}`);
         });
     });
 </script>
